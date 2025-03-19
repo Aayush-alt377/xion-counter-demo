@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6d28d9;
+  --primary-light: #8b5cf6;
+  --secondary: #10b981;
+  --background: #f9fafb;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #8b5cf6;
+    --primary-light: #a78bfa;
+    --secondary: #10b981;
+    --background: #111827;
+    --card-bg: #1f2937;
+    --text: #f9fafb;
+    --text-light: #9ca3af;
+  }
+}
+
+body {
+  color: var(--text);
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden p-6;
+  }
+  
+  .btn-primary {
+    @apply bg-violet-600 hover:bg-violet-500 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow;
+  }
+  
+  .btn-secondary {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow;
+  }
+  
+  .btn-danger {
+    @apply bg-rose-600 hover:bg-rose-500 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium py-2.5 px-4 rounded-lg transition-all duration-200;
+  }
+}
